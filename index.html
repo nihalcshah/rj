@@ -33,34 +33,41 @@
         transform: translateY(0);
         opacity: 1;
     }
-
-    ::-webkit-scrollbar {
+    .scl{}
+    .scl::-webkit-scrollbar {
         width: 10px;
         /* Set the width of the scrollbar */
     }
 
-    ::-webkit-scrollbar-thumb {
+    .scl::-webkit-scrollbar-thumb {
         background: rgb(13, 0, 94);
         /* Set the color of the scrollbar */
         border-radius: 5px;
         /* Set the radius of its corners */
     }
 
-    ::-webkit-scrollbar-thumb:hover {
+    .scl::-webkit-scrollbar-thumb:hover {
         background: rgb(85, 19, 228);
         /* Set the color when hovered over */
     }
 </style>
 
-<body class="bg-purple-300 dmsans flex flex-col w-screen overflow-x-hidden h-screen" id="zoom">
-
-
+<body class="w-screen overflow-x-hidden">
     <!-- Modal toggle -->
+
+    <button onclick="home()" id="homebutton" class="absolute bottom-3 right-3 z-40 rounded-full p-2 bg-black text-white hover:bg-white hover:text-black">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd" />
+          </svg>              
+    </button>
+
+    <div class=" hidden bg-purple-300 dmsans flex flex-col w-screen overflow-x-hidden h-screen" id="vals">
     <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-        class="block absolute left-2 bottom-2 md:bottom-6 md:left-6 text-white focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-800"
+        class="hidden md:block absolute left-2 bottom-2 md:bottom-6 md:left-6 text-white focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-800"
         type="button">
         Terms
     </button>
+    
 
     <div id="default-modal" tabindex="-1" aria-hidden="false"
         class=" overflow-y-auto flex bg-indigo-900/70 overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-screen">
@@ -83,8 +90,7 @@
                         You can't tell anyone.
                     </p>
 
-                    <div id="alert-1"
-                        class="flex items-center p-4 mb-4 rounded-lg bg-indigo-950 text-indigo-400"
+                    <div id="alert-1" class="flex items-center p-4 mb-4 rounded-lg bg-indigo-950 text-indigo-400"
                         role="alert">
                         <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                             fill="currentColor" viewBox="0 0 20 20">
@@ -112,38 +118,38 @@
                     <button data-modal-hide="default-modal" type="button"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">I
                         accept</button>
-                    <a href="https://en.wikipedia.org/wiki/9/11_conspiracy_theories"
-                        type="button"
+                    <a href="https://en.wikipedia.org/wiki/9/11_conspiracy_theories" type="button"
                         class="ms-3 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 bg-red-700 text-red-50 border-red-500 hover:text-white hover:bg-red-600 focus:ring-red-600">Decline</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="m-auto text-indigo-700 h-3/4 md:h-2/3 rounded-xl p-8 md:p-16 shadow-xl mx-12 md:mx-24 overflow-y-auto overflow-x-hidden"
+    <div class="m-auto scl text-indigo-700 h-3/4 md:h-2/3 rounded-xl p-8 md:p-16 shadow-xl mx-12 md:mx-24 overflow-y-auto overflow-x-hidden"
         id="container">
         <div class="text-3xl md:text-4xl font-bold tracking-widest pb-16 ">Hey <span
-                class="text-black font-normal text-4xl md:text:4xl italic crimsonpro">Rishita</span>, you’re gonna have to scroll to
+                class="text-black font-normal text-4xl md:text:4xl italic crimsonpro">Rishita</span>, you’re gonna have
+            to scroll to
             see more</div>
-        <div class="text-xl md:text-3xl font-bold reveal pb-16 "><span
-                class="text-black dmsans not-italic">1</span> <span class="italic crimsonpro">in every </span><span
-                class="text-black dmsans not-italic"> 2,023 </span> are <span class="crimsonpro text-2xl md:text-4xl not-italic">
+        <div class="text-xl md:text-3xl font-bold reveal pb-16 "><span class="text-black dmsans not-italic">1</span>
+            <span class="italic crimsonpro">in every </span><span class="text-black dmsans not-italic"> 2,023 </span>
+            are <span class="crimsonpro text-2xl md:text-4xl not-italic">
                 Jains</span> </div>
-        <div class="text-xl md:text-3xl font-bold reveal pb-16"><span
-                class="text-black dmsans not-italic">1</span> <span class="italic crimsonpro">in every </span><span
-                class="text-black dmsans not-italic"> 17,285 </span> are <span class="crimsonpro text-2xl md:text-4xl not-italic">
+        <div class="text-xl md:text-3xl font-bold reveal pb-16"><span class="text-black dmsans not-italic">1</span>
+            <span class="italic crimsonpro">in every </span><span class="text-black dmsans not-italic"> 17,285 </span>
+            are <span class="crimsonpro text-2xl md:text-4xl not-italic">
                 listeners of the artist "Keshi"</span> </div>
-        <div class="text-xl md:text-3xl font-bold reveal pb-16 "><span
-                class="text-black dmsans not-italic">1</span> <span class="italic crimsonpro">in every </span><span
-                class="text-black dmsans not-italic"> 9,824 </span> are <span class="crimsonpro text-2xl md:text-4xl not-italic">
+        <div class="text-xl md:text-3xl font-bold reveal pb-16 "><span class="text-black dmsans not-italic">1</span>
+            <span class="italic crimsonpro">in every </span><span class="text-black dmsans not-italic"> 9,824 </span>
+            are <span class="crimsonpro text-2xl md:text-4xl not-italic">
                 girls with a good relationship with their father</span> </div>
-        <div class="text-xl md:text-3xl font-bold reveal pb-16 "><span
-                class="text-black dmsans not-italic">1</span> <span class="italic crimsonpro">in every </span><span
-                class="text-black dmsans not-italic"> 27,465 </span> are <span class="crimsonpro text-2xl md:text-4xl not-italic">
+        <div class="text-xl md:text-3xl font-bold reveal pb-16 "><span class="text-black dmsans not-italic">1</span>
+            <span class="italic crimsonpro">in every </span><span class="text-black dmsans not-italic"> 27,465 </span>
+            are <span class="crimsonpro text-2xl md:text-4xl not-italic">
                 Hindi-speaking Americans</span> </div>
-        <div class="text-xl md:text-3xl font-bold reveal pb-8 "><span
-                class="text-black dmsans not-italic">1</span> <span class="italic crimsonpro">in every </span><span
-                class="text-black dmsans not-italic"> 13,465 </span> are <span class="crimsonpro text-2xl md:text-4xl not-italic">
+        <div class="text-xl md:text-3xl font-bold reveal pb-8 "><span class="text-black dmsans not-italic">1</span>
+            <span class="italic crimsonpro">in every </span><span class="text-black dmsans not-italic"> 13,465 </span>
+            are <span class="crimsonpro text-2xl md:text-4xl not-italic">
                 Indian American women with highlights</span> </div>
         <hr class="border-indigo-500 border-t shadow-xl h-px mb-8 reveal">
         <div class="md:px-4 reveal ">
@@ -157,7 +163,8 @@
         </div>
         <hr class="border-indigo-500 border-t shadow-xl h-px my-8 reveal">
         <div class="reveal text-3xl font-medium">That's <span class="text-4xl font-bold">21</span> zeroes.</div>
-        <button onclick="setup()" class="p-2 px-3 rounded-lg border-2 border-indigo-500 ml-1 mt-4 text-lg flex w-fit hover:underline reveal">
+        <button onclick="setup()"
+            class="p-2 px-3 rounded-lg border-2 border-indigo-500 ml-1 mt-4 text-lg flex w-fit hover:underline reveal">
             <div class="my-auto">Continue</div>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6 text-indigo-700 ml-2 my-auto ">
@@ -166,13 +173,15 @@
         </button>
     </div>
 
-    <div class="hidden m-auto h-fit border-2 shadow-xl overflow-hidden rounded-xl p-8 md:p-16 md:py-12 mx-10 md:mx-16 relative" id="message">
+    <div class="hidden m-auto h-fit border-2 shadow-xl overflow-hidden rounded-xl p-8 md:p-16 md:py-12 mx-10 md:mx-16 relative"
+        id="message">
         <button onclick="reverseSetup()" class="bg-indigo-400 shadow-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="p-1 absolute w-8 h-8 top-4 right-4 text-rose-600">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="p-1 absolute w-8 h-8 top-4 right-4 text-rose-600">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
+            </svg>
         </button>
-          
+
         <div class="relative heart x1"></div>
         <div class="relative heart x2"></div>
         <div class="relative heart x3"></div>
@@ -180,29 +189,376 @@
         <div class="relative heart x5"></div>
         <div class="relative heart x6"></div>
         <div class="relative heart x7"></div>
-        <div class="relative z-30 text-xl md:text-3xl text-rose-800 md:font-light tracking-widest">You're 1 in sextillion...</div>
+        <div class="relative z-30 text-xl md:text-3xl text-rose-800 md:font-light tracking-widest">You're 1 in
+            sextillion...</div>
         <div class="p-4 relative z-30 mt-4">
-            <div class="text-center crimsonpro text-4xl md:text-6xl md:italic md:font-normal tracking-[1.2rem] md:tracking-[1.8rem]">Happy Vals Day</div>
+            <div
+                class="text-center crimsonpro text-4xl md:text-6xl md:italic md:font-normal tracking-[1.2rem] md:tracking-[1.8rem]">
+                Happy Vals Day</div>
             <div class="pt-12 flex flex-col">
                 <div class="text-center crimsonpro text-2xl md:text-4xl italic tracking-widest md:tracking-[1rem]"">Be My Valentine?</div>
-                <div class=" flex pt-8 gap-x-6 mx-auto">
+                    <div class=" flex pt-8 gap-x-6 mx-auto">
                     <button onclick="yes()" type="button" id="yes"
                         class=" text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 bg-rose-800 border-2 border-transparent hover:bg-white hover:text-rose-800 hover:border-rose-800">
-                        <svg class="w-3.5 h-3.5 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
-                          </svg>                          
+                        <svg class="w-3.5 h-3.5 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="w-6 h-6">
+                            <path
+                                d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                        </svg>
                         <div id="yestext">Yes</div>
                     </button>
 
                     <button type="button" onclick="no()" id="no"
                         class=" text-rose-800 bg-white hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 bg-transparent border-2 border-rose-800 hover:bg-white hover:text- ">
-                        <svg class="w-3.5 h-3.5 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
-                          </svg>                          
+                        <svg class="w-3.5 h-3.5 me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="w-6 h-6">
+                            <path
+                                d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                        </svg>
                         <div>No</div>
                     </button>
                 </div>
             </div>
+        </div>
+    </div>
+    </div>
+    <div class="flex flex-col w-screen min-h-screen overflow-y-auto text-white bg-emerald-950 dmsans" id="home">
+        <div class="m-auto rounded-xl p-8 px-16 w-1/2 bg-emerald-900">
+            <div class="font-bold text-6xl tracking-widest pb-2 border-white">Hey Rishita</div>
+            <div class="font-medium text-xl border-b-2 pb-4 border-white">Check out the pages below</div>
+            <div class="mt-6">
+                <div onclick="valentines()"
+                    class="cursor-pointer px-4 py-2 bg-emerald-950 m-auto flex rounded-lg text-emerald-200 gap-x-6 group hover:bg-emerald-100 hover:text-emerald-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-10 h-10 my-auto ">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                    </svg>
+                    <div class="flex-col">
+                        <div class="text-2xl">valentine's day</div>
+                        <div class="text-sm">a little tiny gift</div>
+                    </div>
+                </div>
+                <div onclick="spotify()" class="cursor-pointer px-4 py-2 mt-4 bg-emerald-950 m-auto flex rounded-lg text-emerald-200 group hover:bg-emerald-100 hover:text-emerald-800">
+                    <img src="https://logolook.net/wp-content/uploads/2021/06/Symbol-Spotify.png"
+                        class="w-10 h-10 invert my-auto mr-2" />
+                    <div class="flex-col pl-4 my-auto">
+                        <div class="text-2xl">rishita's spotify playlist</div>
+                        <div class="text-sm">songs + explanations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden flex flex-col w-screen min-h-screen overflow-y-auto overflow-x-hidden text-white bg-sky-800 dmsans py-8 px-12" id="spotify">
+        <iframe class="w-full m-auto overflow-hidden shadow-xl" style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/525pwaBty49cFTM3SsUyR7?utm_source=generator&theme=0"
+            height="352" frameBorder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="mt-2 h-72 md:h-32 overflow-y-auto m-auto scl p-4 px-8 border-4 rounded-xl b">
+            <ol class="relative border-s border-white  text-white ">
+                <li class="md:mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Mena Massoud, Naomi Scott</time>
+                    <h3 class="text-lg font-semibold">A Whole New World</h3>
+                    <p class="mb-4 text-base font-normal">a duet ig?</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Drake</time>
+                    <h3 class="text-lg font-semibold">Massive</h3>
+                    <p class="mb-4 text-base font-normal">"i can't help it, i'm so into you"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">RAYE</time>
+                    <h3 class="text-lg font-semibold">Escapism - Sped Up</h3>
+                    <p class="mb-4 text-base font-normal">needs no explanation</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Sachet Tandon</time>
+                    <h3 class="text-lg font-semibold">Kudmayi</h3>
+                    <p class="mb-4 text-base font-normal">listened to this song a lot when we started talking</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Brent Faiyaz</time>
+                    <h3 class="text-lg font-semibold">Poison</h3>
+                    <p class="mb-4 text-base font-normal">you know why this song is here.</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">beabadoobee</time>
+                    <h3 class="text-lg font-semibold">the perfect pair</h3>
+                    <p class="mb-4 text-base font-normal">it fits us</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">J. Cole</time>
+                    <h3 class="text-lg font-semibold">Power Trip</h3>
+                    <p class="mb-4 text-base font-normal">"got me up all night"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Daniel Caesar</time>
+                    <h3 class="text-lg font-semibold">Best Part (feat. HER)</h3>
+                    <p class="mb-4 text-base font-normal">"if life is a movie..."</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">NIKI</time>
+                    <h3 class="text-lg font-semibold">I Like U</h3>
+                    <p class="mb-4 text-base font-normal">"i want you, i want you, i want you"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">dhruv</time>
+                    <h3 class="text-lg font-semibold">double take</h3>
+                    <p class="mb-4 text-base font-normal">"i don't see nobody but you"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">archana</time>
+                    <h3 class="text-lg font-semibold">Heat</h3>
+                    <p class="mb-4 text-base font-normal">"cuz the heat is kickin' in"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">archana</time>
+                    <h3 class="text-lg font-semibold">Heat</h3>
+                    <p class="mb-4 text-base font-normal">"if you need me, i'll be here to stay"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Emotional Oranges</time>
+                    <h3 class="text-lg font-semibold">Body & Soul</h3>
+                    <p class="mb-4 text-base font-normal">"take you back to my place..."</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Dire Straits</time>
+                    <h3 class="text-lg font-semibold">Why Worry?</h3>
+                    <p class="mb-4 text-base font-normal">"so why worry now?" - don't stress</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Berlin</time>
+                    <h3 class="text-lg font-semibold">Take My Breath Away</h3>
+                    <p class="mb-4 text-base font-normal">just listen to the song</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Ariana Grande</time>
+                    <h3 class="text-lg font-semibold">safety net</h3>
+                    <p class="mb-4 text-base font-normal">"tripping, falling, with no..."</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">The Weeknd</time>
+                    <h3 class="text-lg font-semibold">King of The Fall</h3>
+                    <p class="mb-4 text-base font-normal">"and she gon give it up cause she know i might like it"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Swae Lee, Jhene Aiko</time>
+                    <h3 class="text-lg font-semibold">In The Dark</h3>
+                    <p class="mb-4 text-base font-normal">"you don't even have to question"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Drake</time>
+                    <h3 class="text-lg font-semibold">Childs Play</h3>
+                    <p class="mb-4 text-base font-normal">our blend>></p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Baby Keem</time>
+                    <h3 class="text-lg font-semibold">lost souls</h3>
+                    <p class="mb-4 text-base font-normal">a couple of lyrics i'm talking about (love our facetimes)</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Rae Sremmurd</time>
+                    <h3 class="text-lg font-semibold">This Could Be Us</h3>
+                    <p class="mb-4 text-base font-normal">"spin the bottle"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Baby Keem</time>
+                    <h3 class="text-lg font-semibold">Orange Soda</h3>
+                    <p class="mb-4 text-base font-normal">you my crush</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">The Neighborhood</time>
+                    <h3 class="text-lg font-semibold">Reflections</h3>
+                    <p class="mb-4 text-base font-normal">"i see my reflection in your eyes"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Corinne Bailey Rae</time>
+                    <h3 class="text-lg font-semibold">Put Your Records On</h3>
+                    <p class="mb-4 text-base font-normal">a little message to you</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">RINI</time>
+                    <h3 class="text-lg font-semibold">Aphrodite</h3>
+                    <p class="mb-4 text-base font-normal">"you're the only one i want more of"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Drake</time>
+                    <h3 class="text-lg font-semibold">Headlines</h3>
+                    <p class="mb-4 text-base font-normal">yk why this one is here</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Bruno Mars</time>
+                    <h3 class="text-lg font-semibold">That's What I Like</h3>
+                    <p class="mb-4 text-base font-normal">"now tell me who's the fairest</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Nikhil Iyer</time>
+                    <h3 class="text-lg font-semibold">Maahi Ve</h3>
+                    <p class="mb-4 text-base font-normal">mujhe lagti hai tu kitni pyari re</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Chinmayi, Gopi Sundar</time>
+                    <h3 class="text-lg font-semibold">Titli</h3>
+                    <p class="mb-4 text-base font-normal">ban ke titli dil udaa udaa udaa hai kaheen door</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Armaan Malik</time>
+                    <h3 class="text-lg font-semibold">Jab Tak</h3>
+                    <p class="mb-4 text-base font-normal">super cute song, so much fun to sing</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Vishal Dadlani</time>
+                    <h3 class="text-lg font-semibold">Ik Junoon (Paint It Red)</h3>
+                    <p class="mb-4 text-base font-normal">Zindagi Na Milenge Dobara.</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Henry Mancini</time>
+                    <h3 class="text-lg font-semibold">Lujon</h3>
+                    <p class="mb-4 text-base font-normal">this is how my brain feels when i talk to u</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Bryson Tiller</time>
+                    <h3 class="text-lg font-semibold">Outside</h3>
+                    <p class="mb-4 text-base font-normal">to all the men before me</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Sonu Nigam, Shreya Ghoshal</time>
+                    <h3 class="text-lg font-semibold">Zoobi Doobi</h3>
+                    <p class="mb-4 text-base font-normal">jaise filmo main hota hai</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">OneRepublic</time>
+                    <h3 class="text-lg font-semibold">I Ain't Worried</h3>
+                    <p class="mb-4 text-base font-normal">stress free fr</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Eagles</time>
+                    <h3 class="text-lg font-semibold">Life in the Fast Lane</h3>
+                    <p class="mb-4 text-base font-normal">we are moving fast</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Aditya A</time>
+                    <h3 class="text-lg font-semibold">Chaand Baaliyan</h3>
+                    <p class="mb-4 text-base font-normal">this reminds me of us</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Zack Night</time>
+                    <h3 class="text-lg font-semibold">Bom Diggy Diggy</h3>
+                    <p class="mb-4 text-base font-normal">yk why</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Pritam</time>
+                    <h3 class="text-lg font-semibold">Dil Laga Na</h3>
+                    <p class="mb-4 text-base font-normal">dhoom dhoom just take my life</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Brent Faiyaz</time>
+                    <h3 class="text-lg font-semibold">ROLE MODEL</h3>
+                    <p class="mb-4 text-base font-normal">everyone needs a teacher</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Miguel</time>
+                    <h3 class="text-lg font-semibold">coffee</h3>
+                    <p class="mb-4 text-base font-normal">"sweet dreams turn into coffee in the morning"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Frank Ocean</time>
+                    <h3 class="text-lg font-semibold">Novacane</h3>
+                    <p class="mb-4 text-base font-normal">"You put me on a feelin I never had"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Ariana Grande</time>
+                    <h3 class="text-lg font-semibold">Best Mistake</h3>
+                    <p class="mb-4 text-base font-normal">not sure what we're doing but i know its good</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Jack Johnson</time>
+                    <h3 class="text-lg font-semibold">Upside Down</h3>
+                    <p class="mb-4 text-base font-normal">"i don't want this feeling to go away"</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">The Weeknd</time>
+                    <h3 class="text-lg font-semibold">High For This</h3>
+                    <p class="mb-4 text-base font-normal">ykwim</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Rosenfield</time>
+                    <h3 class="text-lg font-semibold">Body</h3>
+                    <p class="mb-4 text-base font-normal">listen to the song</p>
+                </li>
+                
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Pritam</time>
+                    <h3 class="text-lg font-semibold">Crazy Kiya Re</h3>
+                    <p class="mb-4 text-base font-normal">crazy about you...</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">Shakira, Beyonce</time>
+                    <h3 class="text-lg font-semibold">Beautiful Liar</h3>
+                    <p class="mb-4 text-base font-normal">its me...</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">The Weeknd</time>
+                    <h3 class="text-lg font-semibold">Kiss Land</h3>
+                    <p class="mb-4 text-base font-normal">take me there</p>
+                </li>
+                <li class="mb-5 ms-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
+                    <time class="mb-1 text-sm font-normal text-white">The Beatles</time>
+                    <h3 class="text-lg font-semibold">Here Comes the Sun</h3>
+                    <p class="mb-4 text-base font-normal">you feel like a sunny day</p>
+                </li>
+            </ol>
         </div>
     </div>
 
@@ -232,23 +588,38 @@
             document.getElementById("container").classList.add("hidden");
             document.getElementById("message").classList.remove("hidden");
         }
-        function yes(){
+        function yes() {
             document.getElementById("message").classList.add("elem");
-            document.getElementById("zoom").classList.add("elem");
+            document.getElementById("vals").classList.add("elem");
             document.getElementById("no").classList.add("hidden");
             document.getElementById("yestext").innerText = "Great Choice"
         }
-        function no(){
-            document.getElementById("zoom").classList.add("bg-neutral-400");
-            document.getElementById("zoom").classList.add("grayscale")
+        function no() {
+            document.getElementById("vals").classList.add("bg-neutral-400");
+            document.getElementById("vals").classList.add("grayscale")
             document.getElementById("yes").classList.add("hidden")
         }
-        function reverseSetup(){
+        function reverseSetup() {
             document.getElementById("container").classList.remove("hidden");
             document.getElementById("message").classList.add("hidden");
             document.getElementById("no").classList.remove("hidden");
             document.getElementById("message").classList.remove("elem");
-            document.getElementById("zoom").classList.remove("elem");
+            document.getElementById("vals").classList.remove("elem");
+        }
+        function valentines() {
+            document.getElementById("home").classList.add("hidden")
+            document.getElementById("vals").classList.remove("hidden")
+            document.getElementById("spotify").classList.add("hidden")
+        }
+        function spotify() {
+            document.getElementById("home").classList.add("hidden")
+            document.getElementById("vals").classList.add("hidden")
+            document.getElementById("spotify").classList.remove("hidden")
+        }
+        function home() {
+            document.getElementById("home").classList.remove("hidden")
+            document.getElementById("vals").classList.add("hidden")
+            document.getElementById("spotify").classList.add("hidden")
         }
     </script>
 </body>
