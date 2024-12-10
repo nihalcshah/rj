@@ -12,6 +12,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://www.svgrepo.com/download/117783/heart.svg" />
     <title>Rishita's Surprise</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="emailIntegration.js"></script>
 </head>
 <style>
     .dmsans {
@@ -932,10 +936,12 @@
             };
             
             // Here you would typically send this data to a server
-            console.log('Feedback submitted:', feedbackData);
+            // console.log('Feedback submitted:', feedbackData);
             
-            // Show success message
-            alert('CJ thanks you for your feedback!');
+            // // Show success message
+            // alert('CJ thanks you for your feedback!');
+
+            sendFeedbackEmail(feedbackData);
             
             // Reset form and go back to home
             resetFeedbackForm();
